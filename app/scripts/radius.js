@@ -2,6 +2,11 @@ var COUCHDB_SERVER = 'http://rdius.co:5984';
 var current_blips = [];
 
 
+function addBlipToMap(blip) {
+  console.log(blip);
+  console.log(map);
+}
+
 App = Ember.Application.create();
 
 App.Router.map(function() {
@@ -10,10 +15,16 @@ App.Router.map(function() {
 
 App.IndexRoute = Ember.Route.extend({
   model: function() {
+
+
+
     var allBlips = [];
     Ember.$.getJSON(COUCHDB_SERVER + '/blip/_all_docs').then(function(data) {
       $.each(data.rows, function(index, row) {
         Ember.$.getJSON(COUCHDB_SERVER + '/blip/' + row.id).then(function(blip) {
+
+          addBlipToMap(blip);
+
           console.log(blip);
           allBlips.pushObject(blip);
         });
