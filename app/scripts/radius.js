@@ -5,6 +5,12 @@ var current_blips = [];
 function addBlipToMap(blip) {
   console.log(blip);
   console.log(map);
+  var marker = new google.maps.Marker({
+    position: new google.maps.LatLng(blip.latitude, blip.longitude),
+    map: map,
+    title: blip.title,
+    animation: google.maps.Animation.DROP
+  });
 }
 
 App = Ember.Application.create();
