@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="icon" href="../../favicon.ico">
+<title>Geo-journaling for social savants and casual people watchers</title>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<!-- Optional theme -->
+<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+<link rel="stylesheet/less" type="text/css" href="css/main.less" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.7.5/less.min.js"></script>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<div class="navbar navbar-static-top navbar-rdius" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+            <a class="navbar-brand" href="index.html"><img src="img/rdius_hdr-logo_sm.png" alt="Rdius logo"></a> </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="#" class="fa fa-plus fa-2x"></a></li>
+                <li><a href="#about" class="fa fa-heart-o fa-2x"></a></li>
+                <li><a href="#contact" class="fa fa-user fa-2x"></a></li>
+            </ul>
+        </div>
+        <!--/.nav-collapse --> 
+    </div>
+</div>
+<div class="container-fluid stretch">
+    <div class="col col-sm-8 map-holder">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d25137.42085694624!2d-78.50963020205313!3d38.04294776480806!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1411841050877" width="100%" height="640" frameborder="0" style="border:0"></iframe>
+    </div>
+    <div class="col col-sm-4">
+        <div class="container-fluid blipstream">
+            <div class="blip blip-new">
+            	<h3>Log a New Blip!</h3>
+                <form role="form">
+					<div class="form-group">
+						<label for="blipTitle">Blip Title</label>
+						<input type="text" class="form-control" id="blipTitle" placeholder="Enter a clever title">
+					</div>
+					<div class="form-group">
+                        <label for="blipText">Blip Text</label>
+                        <textarea class="form-control" id="blipText" placeholder="SImple text entry..." rows="5"></textarea>
+                        <span class="help-block">(No character limit. Hard line breaks start a new paragraph.)</span>
+					</div>
+					<div class="form-group map-spot">
+						<i class="fa fa-map-marker fa-3x pull-left"></i> Your new blip is pointed at <br><strong>1004 Germanna Drive <br>Fredericksbrug, VA 22463</strong>
+					</div>
+					<div class="form-group">
+                        <label for="exampleInputFile">Include a Photo</label>
+                        <input type="file" id="exampleInputFile">
+					</div>
+					<button type="submit" class="btn btn-primary btn-lg">Submit</button> <button type="submit" class="btn btn-default btn-lg">Cancel</button>
+				</form>
+            </div>
+            <div class="blip blip-max">
+                <h4>Name your blip!</h4>
+                <img src="http://placehold.it/350x150" class="img-responsive" alt="Placeholder">
+                <p>Last Tuesday, I went out to the Punch Bowl. It started like any other day, but it turned into a brutal attack by a ninja.</p>
+                <div class="action-strip center">
+                	<a href="#"><i class="fa fa-heart-o"></i></a>
+                    <a href="#"><i class="fa fa-flag-o"></i></a>
+                </div>
+            </div>
+            <div class="blip blip-min blip-fave"">
+                <h4>Name your blip!</h4>
+                <p>Last Tuesday, I went out to the Punch Bowl. It started like any other day, but it turned into a brutal attack by a ninja.</p>
+                <div class="action-strip text-center">
+                	<a href="#"><i class="fa fa-heart"></i></a>
+                    <a href="#"><i class="fa fa-flag-o"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Bootstrap core JavaScript
+    ================================================== --> 
+<!-- Placed at the end of the document so the pages load faster --> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+<script src="../../dist/js/bootstrap.min.js"></script> 
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug --> 
+<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+</body>
+</html>
