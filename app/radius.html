@@ -8,18 +8,39 @@
 </head>
 <body>
   <script type="text/x-handlebars">
-    <h2>Welcome to Ember.js</h2>
+    <h1>Rdius</h1>
 
     {{outlet}}
   </script>
 
   <script type="text/x-handlebars" id="index">
+    <div style="border: 1px solid black; height: 400px;" id="map-canvas">
+    
+    </div>
+
     <ul>
     {{#each item in model}}
       <li>{{item}}</li>
     {{/each}}
     </ul>
   </script>
+
+  <script type="text/x-handlebars" id="sidebar">
+  </script>
+
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATDDB1xeuW7_saaVkjjBUzLHv7hit7n8E"></script>
+
+  <script type="text/javascript">
+      function initialize() {
+        var mapOptions = {
+          center: { lat:38.303936, lng: -77.459160 },
+          zoom: 15
+        };
+        var map = new google.maps.Map(document.getElementById('map-canvas'),
+            mapOptions);
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
 
   <script src="vendor/jquery-1.10.2.js"></script>
   <script src="vendor/handlebars-1.1.2.js"></script>
