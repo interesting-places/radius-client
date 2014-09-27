@@ -17,24 +17,22 @@
     {{outlet}}
   </script>
 
-  <script type="text/x-handlebars" id="index">
+  <script type="text/x-handlebars" data-template-name="blips">
     <div style="border: 1px solid black; height: 400px;" id="map-canvas">
     </div>
 
-    {{#each item in model}}
+    {{#each itemController="blip"}}
       <div>
-        <h4><a href="#">{{item.title}}</a></h4>
-        <span>{{item.datetime}}</span>
-        <span>Karma: {{item.karma}}</span>
-        <span>Description: {{item.content.type}}</span>
-        <span>Lat: {{item.latitude}}, Lon: {{item.longitude}}</span>
-        <span><a href="#">Upvote</a> <a href="#">Downvote</a></span>
+        <h4><a href="#">{{title}}</a></h4>
+        <span>{{datetime}}</span>
+        <span>Karma:{{karma}}</span></span>
+        <span>Description: {{content.type}}</span>
+        <span>Lat: {{latitude}}, Lon: {{longitude}}</span>
+        <span><button {{action 'upvote' }}>Upvote</button> <button {{action 'downvote'}}>Downvote</button></span>
       </div>
     {{/each}}
   </script>
 
-  <script type="text/x-handlebars" id="sidebar">
-  </script>
 
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATDDB1xeuW7_saaVkjjBUzLHv7hit7n8E"></script>
 
@@ -53,6 +51,7 @@
   <script src="vendor/jquery-1.10.2.js"></script>
   <script src="vendor/handlebars-1.1.2.js"></script>
   <script src="vendor/ember-1.7.0.js"></script>
+  <script src="vendor/ember-data.js"></script>
   <script src="scripts/radius.js"></script>
   <!-- to activate the test runner, add the "?test" query string parameter -->
   <!-- <script src="tests/runner.js"></script>-->
