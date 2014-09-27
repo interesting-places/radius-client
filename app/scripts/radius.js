@@ -64,15 +64,45 @@ Radius.BlipController = Ember.ObjectController.extend({
   actions: {
 
     upvote: function() {
-      var karma = this.get('karma');
-      this.set('karma', karma + 1);
       console.log('in upvote');
+      var karma = this.get('karma');
+      var id = this.get('_id');
+      var blip = this.get('model');
+      this.set('karma', karma + 1);
+      console.log(blip);
+      var self = this;
+
+      // Upload the new object to the server.
+      $.ajax(COUCHDB_SERVER + '/blip/' + id, {
+        method: 'PUT',
+        data: JSON.stringify(blip),
+        success: function(data) {
+          Ember.$.getJSON(COUCHDB_SERVER + '/blip/' + id).then(function(new_blip) {
+            self.set('_rev', new_blip._rev);
+          });
+        }
+      });
+
     },
 
     downvote: function() {
       var karma = this.get('karma');
+      var id = this.get('_id');
+      var blip = this.get('model');
       this.set('karma', karma - 1);
-      console.log('in downvote');
+      console.log(blip);
+      var self = this;
+
+      // Upload the new object to the server.
+      $.ajax(COUCHDB_SERVER + '/blip/' + id, {
+        method: 'PUT',
+        data: JSON.stringify(blip),
+        success: function(data) {
+          Ember.$.getJSON(COUCHDB_SERVER + '/blip/' + id).then(function(new_blip) {
+            self.set('_rev', new_blip._rev);
+          });
+        }
+      });
     }
   }
 });
