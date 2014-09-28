@@ -6,6 +6,7 @@ var COUCHDB_SERVER = 'http://rdius.co:5984';
  * Adds a blip to the global Google Map
  */
 function addBlipToMap(blip) {
+  console.log('Adding blip to map...');
   var marker = new google.maps.Marker({
     position: new google.maps.LatLng(blip.latitude, blip.longitude),
     map: map,
@@ -75,8 +76,14 @@ Radius.BlipController = Ember.ObjectController.extend({
       console.log(content);
       return content.content.content;
     }
-    else {
-      return 'it is a myster';
+    else if (type === 'photo') {
+
+      var photoUrl = content.content.url;
+      var photoCaption = content.content.caption;
+      var result = 'butts';//'<img src="' + photoUrl + '" style="max-width:350px;" />';
+      /*result = result + '<p style="font-size: 11.5px;">' + photoCaption + '</p>';*/
+      return 'butts'; // result;
+
     }
 
   }.property('model.contentish'),
@@ -128,6 +135,10 @@ Radius.BlipController = Ember.ObjectController.extend({
   }
 });
 
+Ember.Handlebars.helper('safe', function(value, options) {
+  console.log(value);
+  return new Ember.Handlebars.SafeString(value);
+});
 
 /*
  * Date formatter that makes the dates look not terrible.
