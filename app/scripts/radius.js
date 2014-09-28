@@ -61,6 +61,27 @@ Radius.BlipsRoute = Ember.Route.extend({
 
 Radius.BlipController = Ember.ObjectController.extend({
 
+  /**
+   * Gets the content of the blip.  But you know, only sort of.  So content-ish.
+   */
+  contentish: function(key, value) {
+
+    /* We need to figure out what kind of content we are dealing with... text, picture, video, audio. */
+    var content = this.get('content');
+    var type = content.content.type;
+    console.log(type);
+
+    if (type === 'text') {
+      console.log(content);
+      return content.content.content;
+    }
+    else {
+      return 'it is a myster';
+    }
+
+  }.property('model.contentish'),
+
+
   actions: {
 
     upvote: function() {
