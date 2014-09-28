@@ -66,16 +66,32 @@
             
             <div id="show-the-blips">
             {{#each itemController="blip"}}
-            <div class="blip blip-min"> <!-- can also blip-fave -->
+            <!--<div class="blip blip-min"> 
                 <h4>{{title}}</h4>
                 <p class="muted" style="font-size: 10px;">{{format-date datetime}}</p>
-                <!--<p>{{latitude}}, {{longitude}}</p>-->
                 {{safe contentish}}
                 <div class="action-strip text-center">
                 	<a href="#"><i class="fa fa-heart-o"></i></a>
                     <a href="#"><i class="fa fa-flag-o"></i></a>
                 </div>
-            </div> <!-- .blip -->
+            </div>--> <!-- .blip -->
+
+                <div class="blip blip-min">
+                    <h4>{{title}}</h4>
+                    {{safe contentish}}
+                    <div class="row">
+                        <div class="col-xs-9 meta-data">Added <em class="timestamp">{{format-date datetime}}</em> by <em class="userstamp"><a href="#">{{username}}</a></em></div>
+                        <div class="col-xs-3 text-right">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-thumbs-o-up"></i></button>
+                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-thumbs-o-down"></i></button>							</div>
+                        </div>
+                    </div>
+                    <div class="expand"></div>
+                </div>
+
+
+
             {{/each}}
             </div> <!-- #show-the-blips -->
             
