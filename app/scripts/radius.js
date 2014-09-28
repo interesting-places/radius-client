@@ -146,3 +146,19 @@ Ember.Handlebars.helper('safe', function(value, options) {
 Ember.Handlebars.helper('format-date', function(date) {
   return moment(date).fromNow();
 });
+
+
+/*
+ * Some jquery magic becuase I'm new to ember.
+ */
+
+/*
+ * Toggles the new blip view
+ */
+function toggleNewBlip() {
+  $('#show-the-blips').animate({height: 'toggle'},
+      { complete: function() {
+          console.log('done with animation');
+    }
+  });
+}

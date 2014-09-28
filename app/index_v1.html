@@ -63,20 +63,26 @@
                     <a href="#"><i class="fa fa-flag-o"></i></a>
                 </div>
             </div> -->
+            
+            <div id="show-the-blips">
             {{#each itemController="blip"}}
             <div class="blip blip-min"> <!-- can also blip-fave -->
                 <h4>{{title}}</h4>
                 <p class="muted" style="font-size: 10px;">{{format-date datetime}}</p>
                 <!--<p>{{latitude}}, {{longitude}}</p>-->
-                <div style="font-size: 11.5px;">
                 {{safe contentish}}
-                </div>
                 <div class="action-strip text-center">
                 	<a href="#"><i class="fa fa-heart-o"></i></a>
                     <a href="#"><i class="fa fa-flag-o"></i></a>
                 </div>
             </div> <!-- .blip -->
             {{/each}}
+            </div> <!-- #show-the-blips -->
+            
+            <div id="new-blip-container" style="display: none">
+              <h1>Butt farts</h1>
+            </div> <!-- #new-blip-container -->
+
         </div>
     </div>
 </div>
