@@ -173,7 +173,7 @@ function addNewBlip(event) {
 
   var title = $('#blipTitle').val();
   var text = $('#blipText').val();
-  var photo = $('#blipPhotoUpload').val();
+  var photo = $('#blipPhotoUpload')[0].files[0];
   var lat = $('#blipLat').val();
   var lon = $('#blipLon').val();
 
@@ -189,6 +189,16 @@ function addNewBlip(event) {
       content: text
     }
   };
+
+  // If we have a photo, then we need to upload that first
+  $.ajax('http://rdius.co:5000/upload', {
+    method: 'POST',
+    data: photo,
+    success: function(data) {
+      console.log('Photo upload result');
+
+    }
+  });
 
   console.log(blip);
 

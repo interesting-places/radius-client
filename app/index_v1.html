@@ -96,13 +96,20 @@
 					        <div class="form-group map-spot">
 						      <i class="fa fa-map-marker fa-3x pull-left"></i> Your new blip is pointed at <br><strong>1004 Germanna Drive <br>Fredericksbrug, VA 22463</strong>
                   <div id="latlong" style="padding-top: 10px;">
-                      <input type="text" id="blipLat" placeholder="Latitude" />
-                      <input type="text" id="blipLon" placeholder="Longitude" />
+                      <input type="text" id="blipLat" placeholder="38.2318" style="margin-bottom: 10px;" />
+                      <input type="text" id="blipLon" placeholder="77.4930" />
                   </div>
               </div> <!-- .blip-new -->
 					    <div class="form-group">
-                <label for="exampleInputFile">Include a Photo</label>
-                <input type="file" id="blipPhotoUpload">
+                <!--<label for="exampleInputFile">Include a Photo</label>-->
+                <!--<input type="file" id="blipPhotoUpload">-->
+                <!--<input type="file" class="btn btn-success" accept="image/*" id="capture" capture="camera">-->
+                
+                
+                <button class="btn" style="width: 300px; margin-bottom: 10px;">Attach a Photo</button><br />
+                <button class="btn" style="width: 300px; margin-bottom: 10px;">Attach a Video</button><br />
+                <button class="btn" style="width: 300px; margin-bottom: 10px;">Attach an Audio Clip</button>
+
 					    </div>
 					    <button onclick="addNewBlip(event)" class="btn btn-primary btn-lg">Submit</button> <button type="submit" class="btn btn-default btn-lg" onclick="toggleNewBlip(event)">Cancel</button>
 				    </form>
@@ -131,6 +138,8 @@
 
 <!-- Moment.js -->
 <script type="text/javascript" src="vendor/moment.min.js"></script>
+
+<!-- file upload -->
 
 <!-- Google Maps -->
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATDDB1xeuW7_saaVkjjBUzLHv7hit7n8E"></script>
