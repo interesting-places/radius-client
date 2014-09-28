@@ -85,6 +85,22 @@ Radius.BlipController = Ember.ObjectController.extend({
       return result;
 
     }
+    else if (type === 'video') {
+      var youtubeUrl = content.content.url;
+      var result = '<iframe width="350" height="197" src="' + youtubeUrl + '" frameborder="0" allowfullscreen></iframe>';
+      return result;
+    }
+
+    else if (type == 'audio') {
+      var soundcloudUrl = content.content.url;
+      var result = '<iframe width="100%" height="300" scrolling="no" frameborder="no" src="' + soundcloudUrl + '"></iframe>';
+      return result;
+    }
+    else {
+      return 'mystery content....';
+    }
+
+
 
   }.property('model.contentish'),
 
