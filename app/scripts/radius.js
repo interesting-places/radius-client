@@ -169,11 +169,40 @@ function toggleNewBlip(event) {
 /*
  * Submits a new blip to the database
  */
-function addNewBlip(title, content) {
+function addNewBlip(event) {
+
+  var title = $('#blipTitle').val();
+  var text = $('#blipText').val();
+  var photo = $('#blipPhotoUpload').val();
+  var lat = $('#blipLat').val();
+  var lon = $('#blipLon').val();
+
+  var blip = {
+    datetime: new Date().toISOString(),
+    title: title,
+    user: 'thomas',
+    karma: 0,
+    latitude: lat,
+    longitude: lon,
+    content: {
+      type: 'text',
+      content: text
+    }
+  };
+
+  console.log(blip);
+
+  // This one is for text
+
   $.ajax(COUCHDB_SERVER + '/blip', {
     method: 'POST',
     contentType: 'application/json',
-    data: '{ "hello": "world" }'
+    data: JSON.stringify(blip)
   });
+
+
+  console.log(text);
+  console.log(title);
+  return false;
 }
 

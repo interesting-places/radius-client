@@ -90,17 +90,21 @@
 					        </div>
 					        <div class="form-group">
                     <label for="blipText">Blip Text</label>
-                    <textarea class="form-control" id="blipText" placeholder="SImple text entry..." rows="5"></textarea>
+                    <textarea class="form-control" id="blipText" placeholder="Simple text entry..." rows="5"></textarea>
                     <span class="help-block">(No character limit. Hard line breaks start a new paragraph.)</span>
                   </div> <!-- .form-group -->
 					        <div class="form-group map-spot">
 						      <i class="fa fa-map-marker fa-3x pull-left"></i> Your new blip is pointed at <br><strong>1004 Germanna Drive <br>Fredericksbrug, VA 22463</strong>
+                  <div id="latlong" style="padding-top: 10px;">
+                      <input type="text" id="blipLat" placeholder="Latitude" />
+                      <input type="text" id="blipLon" placeholder="Longitude" />
+                  </div>
               </div> <!-- .blip-new -->
 					    <div class="form-group">
                 <label for="exampleInputFile">Include a Photo</label>
-                <input type="file" id="exampleInputFile">
+                <input type="file" id="blipPhotoUpload">
 					    </div>
-					    <button type="submit" class="btn btn-primary btn-lg">Submit</button> <button type="submit" class="btn btn-default btn-lg" onclick="toggleNewBlip(event)">Cancel</button>
+					    <button onclick="addNewBlip(event)" class="btn btn-primary btn-lg">Submit</button> <button type="submit" class="btn btn-default btn-lg" onclick="toggleNewBlip(event)">Cancel</button>
 				    </form>
           </div>
         </div> <!-- #new-blip-container -->
