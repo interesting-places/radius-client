@@ -79,9 +79,31 @@
             {{/each}}
             </div> <!-- #show-the-blips -->
             
-            <div id="new-blip-container" style="display: none">
-              <h1>Butt farts</h1>
-            </div> <!-- #new-blip-container -->
+            <!-- Container to create a new blip -->
+            <div id="new-blip-container" style="display: none;">
+              <div class="blip blip-new">
+            	  <h3>Log a New Blip!</h3>
+                <form role="form">
+					        <div class="form-group">
+						        <label for="blipTitle">Blip Title</label>
+						        <input type="text" class="form-control" id="blipTitle" placeholder="Enter a clever title">
+					        </div>
+					        <div class="form-group">
+                    <label for="blipText">Blip Text</label>
+                    <textarea class="form-control" id="blipText" placeholder="SImple text entry..." rows="5"></textarea>
+                    <span class="help-block">(No character limit. Hard line breaks start a new paragraph.)</span>
+                  </div> <!-- .form-group -->
+					        <div class="form-group map-spot">
+						      <i class="fa fa-map-marker fa-3x pull-left"></i> Your new blip is pointed at <br><strong>1004 Germanna Drive <br>Fredericksbrug, VA 22463</strong>
+              </div> <!-- .blip-new -->
+					    <div class="form-group">
+                <label for="exampleInputFile">Include a Photo</label>
+                <input type="file" id="exampleInputFile">
+					    </div>
+					    <button type="submit" class="btn btn-primary btn-lg">Submit</button> <button type="submit" class="btn btn-default btn-lg">Cancel</button>
+				    </form>
+          </div>
+        </div> <!-- #new-blip-container -->
 
         </div>
     </div>

@@ -159,6 +159,7 @@ function toggleNewBlip() {
   $('#show-the-blips').animate({height: 'toggle'},
       { complete: function() {
           console.log('done with animation');
+          $('#new-blip-container').animate({height: 'toggle'});
     }
   });
 }
