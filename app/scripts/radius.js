@@ -80,9 +80,9 @@ Radius.BlipController = Ember.ObjectController.extend({
 
       var photoUrl = content.content.url;
       var photoCaption = content.content.caption;
-      var result = 'butts';//'<img src="' + photoUrl + '" style="max-width:350px;" />';
-      /*result = result + '<p style="font-size: 11.5px;">' + photoCaption + '</p>';*/
-      return 'butts'; // result;
+      var result = '<img src="' + photoUrl + '" style="max-width:350px; padding-bottom: 10px;" /><br />';
+      result = result + '<p style="font-size: 11.5px;">' + photoCaption + '</p>';
+      return result;
 
     }
 
