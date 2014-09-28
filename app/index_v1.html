@@ -7,7 +7,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <link rel="icon" href="../../favicon.ico">
-<title>Geo-journaling for social savants and casual people watchers</title>
+<title>Rdius.co</title>
 
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -61,14 +61,17 @@
                     <a href="#"><i class="fa fa-flag-o"></i></a>
                 </div>
             </div>
-            <div class="blip blip-min blip-fave"">
-                <h4>Name your blip!</h4>
-                <p>Last Tuesday, I went out to the Punch Bowl. It started like any other day, but it turned into a brutal attack by a ninja.</p>
+            {{#each itemController="blip"}}
+            <div class="blip blip-min"> <!-- can also blip-fave -->
+                <h4>{{title}}</h4>
+                <p>{{format-date datetime}}</p>
+                <!--<p>{{latitude}}, {{longitude}}</p>-->
                 <div class="action-strip text-center">
-                	<a href="#"><i class="fa fa-heart"></i></a>
+                	<a href="#"><i class="fa fa-heart-o"></i></a>
                     <a href="#"><i class="fa fa-flag-o"></i></a>
                 </div>
-            </div>
+            </div> <!-- .blip -->
+            {{/each}}
         </div>
     </div>
 </div>
@@ -90,6 +93,9 @@
 <script type="text/javascript" src="vendor/ember-data.js"></script>
 <script type="text/javascript" src="vendor/ember-1.7.0.js"></script>
 
+<!-- Moment.js -->
+<script type="text/javascript" src="vendor/moment.min.js"></script>
+
 <!-- Google Maps -->
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATDDB1xeuW7_saaVkjjBUzLHv7hit7n8E"></script>
 
@@ -105,9 +111,9 @@
   google.maps.event.addDomListener(window, 'load', initialize);
 </script>
 
+<!-- Moment.js -->
 
-
-<!-- Actual Ember.js applicatio -->
+<!-- Actual Ember.js application -->
 <script type="text/javascript" src="scripts/radius.js"></script>
 
 </body>

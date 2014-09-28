@@ -106,3 +106,11 @@ Radius.BlipController = Ember.ObjectController.extend({
     }
   }
 });
+
+
+/*
+ * Date formatter that makes the dates look not terrible.
+ */
+Ember.Handlebars.helper('format-date', function(date) {
+  return moment(date).fromNow();
+});
