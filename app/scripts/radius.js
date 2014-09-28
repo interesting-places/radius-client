@@ -163,3 +163,14 @@ function toggleNewBlip() {
     }
   });
 }
+
+/*
+ * Submits a new blip to the database
+ */
+function addNewBlip(title, content) {
+  $.ajax(COUCHDB_SERVER + '/blip', {
+    method: 'POST',
+    contentType: 'application/json',
+    data: '{ "hello": "world" }'
+  });
+}
