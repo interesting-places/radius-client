@@ -78,5 +78,33 @@
 <script src="../../dist/js/bootstrap.min.js"></script> 
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug --> 
 <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+
+<!-- Ember.js stuff -->
+<script type="text/javascript" src="vendor/jquery-1.10.2.js"></script>
+<script type="text/javascript" src="vendor/handlebars-1.1.2.js"></script>
+<script type="text/javascript" src="vendor/ember-1.7.0.js"></script>
+<script type="text/javascript" src="vendor/ember-data.js"></script>
+<script type="text/javascript" src="vendor/ember-1.7.0.js"></script>
+
+<!-- Google Maps -->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATDDB1xeuW7_saaVkjjBUzLHv7hit7n8E"></script>
+
+<script type="text/javascript">
+  var map = null;
+  function initialize() {
+    var mapOptions = {center: { lat:38.303936, lng: -77.459160 },
+                      zoom: 15};
+    map = new google.maps.Map(document.getElementById('map-canvas'),
+            mapOptions);
+  }
+
+  google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+
+
+<!-- Actual Ember.js applicatio -->
+<script type="text/javascript" src="scripts/radius.js"></script>
+
 </body>
 </html>
