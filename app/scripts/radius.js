@@ -155,7 +155,7 @@ Ember.Handlebars.helper('format-date', function(date) {
 /*
  * Toggles the new blip view
  */
-function toggleNewBlip() {
+function toggleNewBlip(event) {
   $('#show-the-blips').animate({height: 'toggle'},
       { complete: function() {
           console.log('done with animation');
@@ -163,6 +163,8 @@ function toggleNewBlip() {
     }
   });
 }
+
+
 
 /*
  * Submits a new blip to the database
@@ -174,3 +176,4 @@ function addNewBlip(title, content) {
     data: '{ "hello": "world" }'
   });
 }
+

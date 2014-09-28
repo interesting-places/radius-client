@@ -37,7 +37,7 @@
             <a class="navbar-brand" href="#"><img src="img/rdius_hdr-logo_sm.png" alt="Rdius logo"></a> </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="newblip.html" class="fa fa-plus fa-2x"></a></li>
+                <li class="active"><a href="#" onclick="toggleNewBlip(event)" class="fa fa-plus fa-2x"></a></li>
                 <li><a href="#about" class="fa fa-heart-o fa-2x"></a></li>
                 <li><a href="#contact" class="fa fa-user fa-2x"></a></li>
             </ul>
@@ -100,7 +100,7 @@
                 <label for="exampleInputFile">Include a Photo</label>
                 <input type="file" id="exampleInputFile">
 					    </div>
-					    <button type="submit" class="btn btn-primary btn-lg">Submit</button> <button type="submit" class="btn btn-default btn-lg">Cancel</button>
+					    <button type="submit" class="btn btn-primary btn-lg">Submit</button> <button type="submit" class="btn btn-default btn-lg" onclick="toggleNewBlip(event)">Cancel</button>
 				    </form>
           </div>
         </div> <!-- #new-blip-container -->
