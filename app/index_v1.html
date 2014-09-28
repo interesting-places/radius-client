@@ -52,6 +52,7 @@
     </div>
     <div class="col col-sm-4">
         <div class="container-fluid blipstream">
+            <!-- example of blip max
             <div class="blip blip-max">
                 <h4>Name your blip!</h4>
                 <img src="http://placehold.it/350x150" class="img-responsive" alt="Placeholder">
@@ -60,12 +61,13 @@
                 	<a href="#"><i class="fa fa-heart-o"></i></a>
                     <a href="#"><i class="fa fa-flag-o"></i></a>
                 </div>
-            </div>
+            </div> -->
             {{#each itemController="blip"}}
             <div class="blip blip-min"> <!-- can also blip-fave -->
                 <h4>{{title}}</h4>
-                <p>{{format-date datetime}}</p>
+                <p class="muted" style="font-size: 10px;">{{format-date datetime}}</p>
                 <!--<p>{{latitude}}, {{longitude}}</p>-->
+                <p style="font-size: 11.5px;">some content stuff here...</p>
                 <div class="action-strip text-center">
                 	<a href="#"><i class="fa fa-heart-o"></i></a>
                     <a href="#"><i class="fa fa-flag-o"></i></a>
